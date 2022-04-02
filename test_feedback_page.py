@@ -3,7 +3,7 @@ from .pages.locators import BasePageLocators
 import pytest
 import time
 
-"""Тесты для base_page"""
+"""Тесты для feedback_page"""
 
 def test_guest_can_see_success_message_with_fill_form_and_upload_file(browser):              #тест, видит ли гость сообщение об успешной отправки формы, при заполненных полях и загруженом файле
     link = BasePageLocators.LINK
