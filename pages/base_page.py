@@ -1,7 +1,8 @@
+import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 from .locators import BasePageLocators
-import os
+
 
 """Инициализация браузера, базовые методы для удобства читаемости и облегчения написания и корректировки кода"""
 
