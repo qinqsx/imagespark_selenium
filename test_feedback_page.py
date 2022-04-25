@@ -1,7 +1,8 @@
-from .pages.base_page import BasePage
-from .pages.locators import BasePageLocators
 import pytest
 import time
+from .pages.base_page import BasePage
+from .pages.locators import BasePageLocators
+
 
 """Тесты для feedback_page"""
 
