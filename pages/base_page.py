@@ -27,24 +27,18 @@ class BasePage:
         return self.browser.find_element(how, what).text
 
     def send_text(self, how, what, text):                                                #отправка текста по элементу
-        try:
-            return self.browser.find_element(how, what).send_keys(text)
-        except (NoSuchElementException):
-            return NoSuchElementException
+        self.browser.find_element(how, what).send_keys(text)
+
 
     def click_submit(self):                                                              #клик по сабмиту
-        try:
-            return self.browser.find_element(*BasePageLocators.SUBMIT_BUTTON_LINK).click()
-        except (NoSuchElementException):
-            return NoSuchElementException
+        self.browser.find_element(*BasePageLocators.SUBMIT_BUTTON_LINK).click()
+
 
     def upload_file_from_current_dir(self, file):                                              #загрузка файла из директории в которой находится base_page.py
-        try:
-            current_dir = os.path.abspath(os.path.dirname(__file__))
-            file_path = os.path.join(current_dir, file)
-            return self.browser.find_element(*BasePageLocators.FILE_UPLOAD_LINK).send_keys(file_path)
-        except (NoSuchElementException):
-            return NoSuchElementException
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+        file_path = os.path.join(current_dir, file)
+        self.browser.find_element(*BasePageLocators.FILE_UPLOAD_LINK).send_keys(file_path)
+
 
     def fill_text_forms(self, name, email, phone, message):                             #заполнение всех форм на странице
         self.send_text(*BasePageLocators.NAME_FORM_LINK, name)
