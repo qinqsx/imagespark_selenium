@@ -6,7 +6,7 @@ from .pages.locators import BasePageLocators
 
 """Тесты для feedback_page"""
 
-def test_guest_can_see_success_message_with_fill_form_and_upload_file(browser):              #тест, видит ли гость сообщение об успешной отправки формы, при заполненных полях и загруженом файле
+def test_guest_can_see_success_message_with_fill_form_and_upload_file(browser):              #тест, видит ли гость сообщение об успешной отправке формы, при заполненных полях и загруженом файле
     link = BasePageLocators.LINK
     base_page = BasePage(browser, link)
     base_page.open()
